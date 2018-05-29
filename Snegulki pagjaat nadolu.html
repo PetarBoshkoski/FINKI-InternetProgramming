@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Psycho</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">
+	 #img1 {
+		height: 60px;
+		width: 60px;
+		position: absolute;
+	}
+	img {
+		height: 60px;
+		width: 60px;
+		position: absolute;
+	}
+	body {
+		position: relative;
+	}
+</style>
+<body>
+
+<img id="img1" onclick="click1()" src="photo.jpg"/>
+<img id="img2" onclick="click1()" src="photo.jpg"/>
+<img id="img3" onclick="click1()" src="photo.jpg"/>
+<img id="img4" onclick="click1()" src="photo.jpg"/>
+<script>
+		var random1 = Math.floor(Math.random()*1000);
+		var random2 = Math.floor(Math.random()*1000);
+		var random3 = Math.floor(Math.random()*1000);
+		var random4 = Math.floor(Math.random()*1000);
+		var random5 = Math.floor(Math.random()*1000);
+		var random6 = Math.floor(Math.random()*1000);
+		var random7 = Math.floor(Math.random()*1000);
+		var random8 = Math.floor(Math.random()*1000);
+		
+		$(document).ready(function() {
+				$("#img1").css({left:random1,top:random2});
+				$("#img2").css({left:random3,top:random4});
+				$("#img3").css({left:random5,top:random6});
+				$("#img4").css({left:random7,top:random8});
+		})
+		var pos=0;
+		var elem = document.getElementsByTagName("img");
+		var id = setInterval(frame,10);
+		function frame() {
+			if(id==350) {
+				clearInterval(id);
+			}
+			pos++;
+			for(var i=0;i<elem.length;i++) {
+				elem[i].style.top = pos + 'px';
+				}
+		}
+		
+	
+
+</script>
+</body>
+</html>
