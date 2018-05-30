@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petar Boshkoski</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">
+</style>
+<body>
+<h1>About Me</h1>
+	<ul>
+ <li>Name: <span id="name"></span>
+ <li>Index: <span id="index"></span>
+ <li>Hometown: <span id="hometown"></span>
+ </ul> 
+<script>
+	document.getElementsByTagName("body")[0].style.fontFamily ='Arial';
+	document.getElementById("name").innerHTML = "Petar";
+	document.getElementById("index").innerHTML = "16xxxx";
+	document.getElementById("hometown").innerHTML = "Makedonski Brod";
+	for(var i=0;i<3;i++) {
+		document.getElementsByTagName("li")[i].style.background = 'red';
+	}
+</script>
+</body>
+</html>

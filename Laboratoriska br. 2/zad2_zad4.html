@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petar Boshkoski</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">
+input {
+	width:50px;
+	height: 20px;
+	margin:2px;
+}
+</style>
+<body>
+
+<input type="text" id="prv">
+<input type="text" id="tret"><i>i</i> <br> 
+<input type="text" id="vtor">
+<input type="text" id="cetvrt"><i>i</i> <br>
+<button id="presmetaj" onclick="Presmetaj()">Add</button> <br><br>
+<input type="text" id="rezultat1"> 
+<input type="text" id="rezultat2"><i>i</i>
+
+<script>
+function Presmetaj() {
+var prvi = document.getElementById("prv").value;
+var vtori = document.getElementById("vtor").value;
+var treti = document.getElementById("tret").value;
+var cetvrti = document.getElementById("cetvrt").value;
+document.getElementById("rezultat1").value = (parseInt(prvi)+parseInt(vtori));
+document.getElementById("rezultat2").value = (parseInt(treti)+parseInt(cetvrti));
+}
+
+</script>
+</body>
+</html>

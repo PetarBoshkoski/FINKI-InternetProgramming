@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petar Boshkoski</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">
+	
+</style>
+<body>
+<form>
+<select id="colorSelect">
+<option>Red</option>
+<option>Green</option>
+<option>White</option>
+<option>Black</option>
+</select>
+<input type="button" onclick="removecolor()" value="Select and Remove"><br>
+</form>
+
+
+<script>
+	function removecolor() {
+		var boja = document.getElementById("colorSelect");
+		console.log(boja.value);
+		boja.remove(boja.selectedIndex);
+	}
+	
+</script>
+</body>
+</html>
