@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petar Boshkoski</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">
+</style>
+<body>
+<table>
+<tr>
+<td>Име: </td> 
+<td><input type="text" id="ime"> </td>
+</tr>
+<tr>
+<td>Презиме: </td> 
+<td><input type="text" id="prezime"> </td>
+</tr>
+<tr>
+<td>Индекс: </td> 
+<td> <input type="text" id="indeks"> </td>
+</tr>
+<tr>
+<td>Предмет: </td>
+<td><input type="text" id="predmet"></td>
+</tr>
+<tr>
+<td>Оцена: </td>
+<td><select id="ocena">
+	<option>5 (пет)</option>
+	<option>6 (шест)</option>
+	<option>7 (седум)</option>
+	<option>8 (осум)</option>
+	<option>9 (девет)</option>
+	<option>10 (десет)</option>
+</td>
+</select>
+</tr> 
+<tr>
+	<td><button onclick="Vnes()">Внеси</button></td>
+</tr>
+</table>
+<br>
+<table border="1px" id="tabela">
+	<thead>
+		<th>Име</th>
+		<th>Презиме</th>
+		<th>Индекс</th>
+		<th>Предмет</th>
+		<th>Оцена</th>
+	</thead>
+
+</table>
+<script>
+ function Vnes() {
+ 	var ime = document.getElementById("ime").value;
+ 	var prezime = document.getElementById("prezime").value;
+ 	var indeks = document.getElementById("indeks").value;
+ 	var predmet = document.getElementById("predmet").value;
+ 	var ocena = document.getElementById("ocena").value;
+ 	var tabela = document.getElementById("tabela");
+ 	tabela.innerHTML+="<tr><td>"+ime+"</td> <td>" + prezime + "</td> <td> "+indeks+" </td> <td>"+predmet+" </td><td>"+ocena+"</td></tr>"
+ 	document.getElementById("ime").value = '';
+ 	document.getElementById("prezime").value  = '';
+ 	document.getElementById("indeks").value = '';
+ 	document.getElementById("predmet").value = '';
+ 	document.getElementById("ocena").value = '';
+ }
+</script>
+</body>
+</html>	

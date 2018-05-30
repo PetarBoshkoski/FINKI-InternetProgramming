@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petar Boshkoski</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">
+</style>
+<body>
+<table>
+	<tr>
+		<td>Items: </td>
+		<td><input type="text" id="items">
+	</tr>
+	<tr>
+		<td>Type: </td>
+		<td><select id="selektirana">
+			<option>radio</option>
+			<option>checkbox</option>
+		</select>
+	</td>
+	</tr>
+	<tr>
+		<td>
+		<button onclick="prikazhi()">Прикажи</button>
+	</td>
+</tr>
+</table>
+<div id="area">
+	</div>
+<script>
+ 	function prikazhi() {
+ 		var vrednost = document.getElementById("items").value;
+ 		var selectirano = document.getElementById("selektirana").value;
+ 		var string = vrednost.split(",");
+ 		for(var i=0;i<string.length;i++) {
+ 			document.getElementById("area").innerHTML+="<input type="+selectirano+" value="+string[i]+">"+string[i]+"";
+ 		}
+ 	}
+</script>
+</body>
+</html>	

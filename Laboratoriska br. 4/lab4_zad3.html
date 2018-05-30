@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petar Boshkoski</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">
+</style>
+<body id="body">
+	<div id="area">
+	<table>
+	<tr>
+		<td> </td>
+		<td>
+		<input type="radio" name="button" value="Color" id="slika">Color
+		<input type="radio" name="button" value="Image" id="boja">Image
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Value: 
+		</td>
+		<td>
+			<input type="text" id="vrednost">
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<button onclick="promeni()">Промени</button>
+		</td>
+	</tr>
+	</table>
+
+	</div>
+<script>
+	
+ 	function promeni() {
+ 		 if(document.getElementById("slika").checked) {
+ 		 	document.getElementById("body").style.background=document.getElementById("vrednost").value;
+ 		 }
+ 		 else if (document.getElementById("boja").checked) {
+ 		 	document.getElementById("body").style.backgroundImage= "url('"+document.getElementById("vrednost").value+"')"
+ 		 }
+
+ 	}
+</script>
+</body>
+</html>	
