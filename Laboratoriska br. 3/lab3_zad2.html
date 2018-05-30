@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petar Boshkoski</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">
+</style>
+<body>
+
+<script>
+var x = findDuplicates([1,2,3,4,5],2);
+alert(x);
+function findDuplicates(lista,broj) {
+
+ for(var i=0;i<lista.length;i++) {
+ 	if(lista[i]==broj) {
+ 		delete lista[i];
+ 	}
+ }
+return lista;
+}
+</script>
+</body>
+</html>

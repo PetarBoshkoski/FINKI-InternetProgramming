@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petar Boshkoski</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">
+</style>
+<body>
+
+<script>
+var knigi = 
+[
+	{
+		title: "The Hobbit",
+		author: "J.R.R Tolkein",
+		alreadyRead: false
+	},
+	{
+		title: "Lord of The Rings",
+		author: "J.R.R Tolkein",
+		alreadyRead: true
+	},
+	{
+		title: "The Monk Who Sold His Ferrari",
+		author: "Robin Sharma",
+		alreadyRead: false
+	}
+]
+
+for(var i=0; i<knigi.length; i++) {
+	if(knigi[i].alreadyRead) {
+		document.write("You already read " + "<b>"+knigi[i].title+"</b>" + " by" + knigi[i].author + ".<br>");
+	}
+	else {
+				document.write("You still need to read " +"<b>"+knigi[i].title+"</b>" + " by" + knigi[i].author + ".<br>");
+
+	}
+}
+</script>
+</body>
+</html>	

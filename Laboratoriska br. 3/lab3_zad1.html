@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petar Boshkoski</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">
+input {
+	width:50px;
+	height: 20px;
+	margin:2px;
+}
+</style>
+<body>
+
+<script>
+var x = findDuplicates([1,1,1,1,1,2,3,4,5,1,1,1]);
+alert(x);
+function findDuplicates(lista) {
+ var novaLista = [];
+
+ for(var i=0;i<lista.length;i++) {
+ 	if(lista[i]!=lista[i+1]) {
+ 		novaLista.push(lista[i]);
+ 	}
+ }
+return novaLista;
+}
+
+</script>
+</body>
+</html>
