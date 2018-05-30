@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petar Boshkoski</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">
+	
+</style>
+<body>
+
+<script>
+	var zbor = prompt("Vnesete tri broevi oddeleni so zapirka (pr. 1, -2, 3)");
+	var proizvod =1;
+	var res = zbor.split(",");
+	for(var i=0;  i<res.length;i++) {
+		proizvod*=parseInt(res[i]);
+	}
+	if(proizvod>=0) {
+	alert("Znakot na proizvodot e +, a rezultatot e: " + proizvod);	
+	}
+	else {
+		alert("Znakot na proizvodot e -, a rezultatot e: " + proizvod);	
+	}
+	
+</script>
+</body>
+</html>

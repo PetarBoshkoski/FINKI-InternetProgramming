@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petar Boshkoski</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">
+	
+</style>
+<body>
+
+<script>
+	var zbor = prompt("Vnesete nekolku zborovi");
+	var res = zbor.split(" ");
+	var maximum = res[0];
+	for(var i=0;  i<res.length;i++) {
+		if(res[i].length > maximum.length) {
+			maximum = res[i];
+		}
+	}
+	alert("Najdolgiot zbor od vnesenite e: " + maximum);
+</script>
+</body>
+</html>

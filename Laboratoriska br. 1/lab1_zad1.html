@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petar Boshkoski</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">
+	
+</style>
+<body>
+
+<script>
+	var broj = prompt("Vnesi tricifren broj");
+	if(broj <= 99 || broj >= 1000) {
+		alert("Mora da vnesite tricifren broj.");
+	}
+	else if(broj%10 == parseInt(broj/100)){
+		alert("Brojot e palindrom.");
+	}
+	else {
+		alert("Brojot ne e palindrom.");
+	}
+</script>
+</body>
+</html>
