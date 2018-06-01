@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petar Boshkoski</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">	
+</style>
+<body>
+<table id="tabela">
+	<tr>
+	<td><input type="text" class="pole"></td>
+	<td><button onclick="izbrishi()"class="izbrisi">Избриши</button></td>
+	</tr>
+</table>
+		<button onclick="dodadi()" class="dodadi">Додади</button>
+		<button onclick="presmetaj()" class="presmetaj">Пресметај</button>
+<script>
+	var tabela = document.getElementById("tabela");	
+	var vrednost = document.getElementsByTagName("input");
+	function dodadi() {
+		tabela.innerHTML+="<tr><td><input type='text' class='pole'></td><td><button onclick='izbrishi()' class='izbrisi'>Избриши</button></td></tr>";
+	}
+	var maksimum = -1;
+	var minimum = 999999999;
+	function presmetaj() {
+		var prosek=0;
+		var broj=0;	
+		for(var i=0;i<vrednost.length;i++) {
+			broj++;
+			prosek+=parseInt(vrednost[i].value);
+			if(parseInt(vrednost[i].value) > maksimum) {
+				maksimum = (vrednost[i].value);
+			}
+			if(parseInt(vrednost[i].value) < minimum) {
+				minimum = (vrednost[i].value);
+			}
+		}
+		alert("Maksimum e: " + maksimum);
+		alert("Prosekot e: " + (prosek/broj));
+		alert("Minimum e: " + minimum);
+	}
+	function izbrishi() {
+		$(".izbrisi").click(function(){
+		$(this).parent().parent().remove();	
+		});
+	}
+</script>
+</body>
+</html>	

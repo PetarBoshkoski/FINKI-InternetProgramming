@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petar Boshkoski</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">	
+.kupi {
+	width:40px;
+}
+</style>
+<body>
+	<table border="1px" id="tabela">
+		<thead>
+			<th>ime</th>
+			<th>kolichina</th>
+			<th>cena</th>
+			<th>kupi</th>
+		</thead>	
+	</table>
+	<button  id="presmetaj">presmetaj</button>
+	<div id="pisuvamTuka"> </div>
+
+<script>
+	var json = [
+	{
+	"ime":"jabolka",
+	"kolichina": "3",
+	"cena": "5"
+	},
+	{
+	"ime": "kajsija",
+	"kolichina": "5",
+	"cena": "7"
+	},
+	{
+	"ime": "sliva",
+	"kolichina": "4",
+	"cena": "1"
+	},
+	{
+	"ime": "praska",
+	"kolichina": "1",
+	"cena": "8"
+	},
+	{
+	"ime": "dunja",
+	"kolichina": "2",
+	"cena": "2"
+	}
+	]
+	var table = document.getElementById("tabela");
+	for(var i=0;i<json.length;i++){
+	table.innerHTML+="<tr><td class='tukaa'>"+json[i].ime+"</td><td class='kol'>"+json[i].kolichina+"</td><td class='cen'>"+json[i].cena+"</td><td><input type='number' class='kupi'></td></tr>";
+	}
+ $("#presmetaj").click(function() {
+		var suma1=0;
+		var suma2=0;
+	 	$("#tabela .cen").each(function() {
+	 		suma1+=parseInt($(this).html());
+	 	});
+	 	$("#tabela .kupi").each(function() {
+	 		suma2+=parseInt($(this).val());
+	 	});
+	 	$("#pisuvamTuka").append("vkupna cena: " + parseInt(suma1+suma2) + "<br>");
+	 	$("#tabela .kupi").each(function() {
+		 if($(this).val() < 0) {
+		 	$(this).parent().parent().css("background-color","red");
+		 	$("#pisuvamTuka").append("negativna vrednost kaj: " + $(this).parent().parent().text()+"<br>");
+		 }
+		$("#tabela .cen").each(function() {
+			if(parseInt($(this).text())>3) {
+				$(this).parent().parent().css("background-color","red");
+			}
+		})
+	 });
+	});	
+</script>
+</body>
+</html>	
