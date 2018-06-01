@@ -7,8 +7,8 @@
 </head>
 <style type="text/css">
 </style>
-<body>
-<table>
+<body bgcolor="lightgray">
+<table align="center">
 <tr>
 <td>Име: </td> 
 <td><input type="text" id="ime"> </td>
@@ -40,33 +40,55 @@
 <tr>
 	<td><button onclick="Vnes()">Внеси</button></td>
 </tr>
-</table>
+</table">
 <br>
-<table border="1px" id="tabela">
+<table border="1px" id="tabela"  align="center">
+	<br>
 	<thead>
 		<th>Име</th>
 		<th>Презиме</th>
 		<th>Индекс</th>
 		<th>Предмет</th>
 		<th>Оцена</th>
+		<th>Акција</th>
 	</thead>
 
 </table>
 <script>
+
  function Vnes() {
- 	var ime = document.getElementById("ime").value;
- 	var prezime = document.getElementById("prezime").value;
- 	var indeks = document.getElementById("indeks").value;
- 	var predmet = document.getElementById("predmet").value;
- 	var ocena = document.getElementById("ocena").value;
+ 	var ime = $("#ime").val();
+ 	var prezime = $("#prezime").val();
+ 	var indeks = $("#indeks").val();
+ 	var predmet = $("#predmet").val();
+ 	var ocena = $("#ocena").val();
  	var tabela = document.getElementById("tabela");
- 	tabela.innerHTML+="<tr><td>"+ime+"</td> <td>" + prezime + "</td> <td> "+indeks+" </td> <td>"+predmet+" </td><td>"+ocena+"</td></tr>"
+
+ 	tabela.innerHTML+="<tr><td>"+ime+"</td> <td>" + prezime + "</td> <td> "+indeks+" </td> <td>"+predmet+" </td><td>"+ocena+"</td><td><input type='button' value='Confirm' class='potvrdi'><input type='button' value='Revert' class='revert'></td></tr>";
  	document.getElementById("ime").value = '';
  	document.getElementById("prezime").value  = '';
  	document.getElementById("indeks").value = '';
  	document.getElementById("predmet").value = '';
  	document.getElementById("ocena").value = '';
- }
+ 	if(predmet<50) {
+ 		$(".potvrdi").parent().parent().css( "background-color", "white" );
+ 	}
+ 	else {
+ 		$(".potvrdi").parent().parent().css( "background-color", "white" );	
+ 	}
+ $(document).ready(function() { 	
+ 	$(".potvrdi").click(function() {
+ 	
+  		 $(this).parent().parent().css( "background-color", "greenyellow" );
+
+  	});
+ 	$(".revert").click(function() {	
+  		 $(this).parent().parent().css( "background-color", "red" );
+  	});
+ }	
+ )};
+  
+
 </script>
 </body>
 </html>	
