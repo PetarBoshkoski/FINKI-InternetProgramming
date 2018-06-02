@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petar Boshkoski</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">	
+.maxbrzina {
+	width:40px;
+}
+</style>
+<body>
+	
+	<div id="area"> </div>
+	<button id="sortiraj"">sortiraj</button>
+	<div id="area2"> </div>
+
+	<p><i>For complete sorting, select multiple times the 'sortiraj' button</i></p>
+<script>
+	var avtomobili = [
+	{
+	"marka":"audi",
+	"model": "q7",
+	"boja": "#ff0000"
+	},
+	{
+	"marka":"bmw",
+	"model": "x7",
+	"boja": "#800000"
+	},
+	{
+	"marka":"chevrolet",
+	"model": "camaro",
+	"boja": "#FFFF00"
+	},
+	{
+	"marka":"opel",
+	"model": "astra",
+	"boja": "#33FF86"
+	},
+	{
+	"marka":"toyota",
+	"model": "prius",
+	"boja": "#9B9B9B"
+	}
+	]
+
+	var mesto = document.getElementById("area");
+	for(var i=0;i<avtomobili.length;i++) {
+	mesto.innerHTML+="<p class='paragraf'><b>marka:</b> "+avtomobili[i].marka+"<b> model: </b>"+avtomobili[i].model+" <b>boja: </b> <input class='boja' type='color' value='"+avtomobili[i].boja+"'/> <b> max brzina: </b><input class='maxbrzina' type='number'/></p>";
+	}
+	var z;
+	$("#sortiraj").click(function() {
+		
+		$("p").each(function() {
+			$(this).css("background-color",$(this).find('.boja').val());
+		});
+		z =$(".paragraf").each(function() {
+			if(parseInt($(this).next().find('.maxbrzina').val()) < parseInt($(this).find('.maxbrzina').val())) {
+				$(this).before($(this).next());
+			}
+		});	
+	});
+</script>
+</body>
+</html>	
