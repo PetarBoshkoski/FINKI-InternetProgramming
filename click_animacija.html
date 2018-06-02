@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petar Boshkoski</title>
+	<script type="text/javascript"></script>
+	<script src="jquery.js"></script>
+</head>
+<style type="text/css">	
+#area {
+	background-color: green;
+	height: 60px;
+	width: 60px;
+	position: absolute;
+	color:white;
+	text-align: center;
+}
+#namali {
+	color:orange;
+	font-size: 30px;
+	border: 1px solid orange;
+	border-radius:  5px;
+}
+</style>
+<body>
+	
+	<div id="area">Click me please <hr></div>
+	<div style="text-align: center;">
+	<span id="namali">Namali</span>
+	</div>
+<script>
+	$(document).ready(function() {
+		$("#area").click(function() {
+			$("#area").css("background-color","green");
+			$("#area").animate({
+				height: "+=20px",
+				left: "+=20px",
+				top: "+=20px"
+				}); 
+		});
+
+		$("#namali").click(function() {
+			$("#area").animate({
+				height: "-=20px",
+				left: "-=20px",
+				top: "-=20px"
+				}); 
+			$("#area").css("background-color","orange");
+		});
+	});
+
+</script>
+</body>
+</html>	
